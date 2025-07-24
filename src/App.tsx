@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 
 // Import wallet adapter CSS
 import '@solana/wallet-adapter-react-ui/styles.css';
+import { Create } from './pages/Create';
 
 const App: React.FC = () => {
   const network = WalletAdapterNetwork.Devnet;
@@ -39,6 +40,7 @@ const App: React.FC = () => {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/explore" element={<Explore />} />
+                    <Route path="/create" element={<Create />} />
                     <Route path="/nft/:id" element={<NFTDetail />} />
                     <Route path="/profile/:address" element={<Profile />} />
                   </Routes>

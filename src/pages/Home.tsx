@@ -95,7 +95,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
             >
-              {stats.map((stat, index) => {
+              {stats.map((stat) => {
                 const Icon = stat.icon;
                 return (
                   <div

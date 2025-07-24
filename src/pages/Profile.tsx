@@ -9,7 +9,20 @@ import { mockNFTs } from '../utils/mockData';
 
 const Profile: React.FC = () => {
   const { address } = useParams<{ address: string }>();
-  const [profile, setProfile] = useState<any>(null);
+  const [profile, setProfile] = useState<{
+    address: string;
+    username: string;
+    bio: string;
+    avatar: string;
+    banner: string;
+    joined: string;
+    totalNFTs: number;
+    totalSales: number;
+    totalVolume: number;
+    followers: number;
+    following: number;
+    verified: boolean;
+  } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('collected');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -50,7 +63,7 @@ const Profile: React.FC = () => {
   useEffect(() => {
     // Simulate API call
     setTimeout(() => {
-      setProfile(mockProfile);
+      setProfile(address ? { ...mockProfile, address } : null);
       setIsLoading(false);
     }, 1000);
   }, [address]);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Heart, Share2, Eye, Zap, User, Clock, Tag, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Heart, Share2, Eye, Zap, User,  ExternalLink } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import { mockNFTs } from '../utils/mockData';
 import Loader from '../components/Loader';
@@ -9,7 +9,22 @@ import NFTCard from '../components/NFTCard';
 
 const NFTDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [nft, setNft] = useState<any>(null);
+  const [nft, setNft] = useState<{
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+    category: string;
+    rarity?: string;
+    views: number;
+    likes: number;
+    isLiked: boolean;
+    creator: string;
+    creatorAddress: string;
+    tokenId: string;
+    createdAt: string;
+  } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
