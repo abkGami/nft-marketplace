@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     { path: '/', label: 'Home' },
     { path: '/explore', label: 'Explore' },
     { path: '/create', label: 'Create' },
-    { path: '/profile/:address', label: 'Profile' },
+    // { path: '/profile/:address', label: 'Profile' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
